@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Control - Control Structures</title>
+    <link rel="icon" type="image/webp" href="idg.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>C++ Fundamentals</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="syntax.html" class="nav-link">Syntax</a>
+                </li>
+                <li class="nav-item">
+                    <a href="io.html" class="nav-link">I/O</a>
+                </li>
+                <li class="nav-item">
+                    <a href="control.html" class="nav-link active">Control</a>
+                </li>
+                <li class="nav-item">
+                    <a href="loops.html" class="nav-link">Loops</a>
+                </li>
+                <li class="nav-item">
+                    <a href="functions.html" class="nav-link">Functions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="arrays.html" class="nav-link">Arrays</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Control Structures Section -->
+    <section id="control" class="content-section parallax-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Control Structures</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="control-demo">
+                <div class="control-card">
+                    <h3>if-else Statement</h3>
+                    <div class="interactive-demo">
+                        <div class="demo-controls">
+                            <label>Enter a score (0-100):</label>
+                            <input type="range" id="score-slider" min="0" max="100" value="85">
+                            <span id="score-value">85</span>
+                        </div>
+                        <div class="grade-display" id="grade-display">
+                            <div class="grade">B</div>
+                            <div class="grade-text">Good!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-card">
+                    <h3>switch Statement</h3>
+                    <div class="switch-demo">
+                        <div class="operation-buttons">
+                            <button class="op-btn active" data-op="+">+</button>
+                            <button class="op-btn" data-op="-">-</button>
+                            <button class="op-btn" data-op="*">×</button>
+                            <button class="op-btn" data-op="/">÷</button>
+                        </div>
+                        <div class="calculation">
+                            <span id="calc-a">10</span>
+                            <span id="calc-op">+</span>
+                            <span id="calc-b">5</span>
+                            <span>=</span>
+                            <span id="calc-result">15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-examples">
+                <div class="control-example-card">
+                    <h3>Simple if Statement</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    int age = 18;
+    
+    if (age >= 18) {
+        std::cout << "You are an adult." << std::endl;
+    }
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="control-example-card">
+                    <h3>if-else Statement</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    int number = 7;
+    
+    if (number % 2 == 0) {
+        std::cout << number << " is even." << std::endl;
+    } else {
+        std::cout << number << " is odd." << std::endl;
+    }
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="control-example-card">
+                    <h3>if-else if-else Statement</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    int score = 85;
+    
+    if (score >= 90) {
+        std::cout << "Grade: A" << std::endl;
+    } else if (score >= 80) {
+        std::cout << "Grade: B" << std::endl;
+    } else if (score >= 70) {
+        std::cout << "Grade: C" << std::endl;
+    } else if (score >= 60) {
+        std::cout << "Grade: D" << std::endl;
+    } else {
+        std::cout << "Grade: F" << std::endl;
+    }
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="control-example-card">
+                    <h3>switch Statement</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    int day = 3;
+    
+    switch (day) {
+        case 1:
+            std::cout << "Monday" << std::endl;
+            break;
+        case 2:
+            std::cout << "Tuesday" << std::endl;
+            break;
+        case 3:
+            std::cout << "Wednesday" << std::endl;
+            break;
+        case 4:
+            std::cout << "Thursday" << std::endl;
+            break;
+        case 5:
+            std::cout << "Friday" << std::endl;
+            break;
+        case 6:
+        case 7:
+            std::cout << "Weekend" << std::endl;
+            break;
+        default:
+            std::cout << "Invalid day" << std::endl;
+            break;
+    }
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="control-example-card">
+                    <h3>Ternary Operator</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    int a = 10, b = 20;
+    
+    // Using ternary operator
+    int max = (a > b) ? a : b;
+    std::cout << "Maximum: " << max << std::endl;
+    
+    // Another example
+    int age = 16;
+    std::string status = (age >= 18) ? "Adult" : "Minor";
+    std::cout << "Status: " << status << std::endl;
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="control-example-card">
+                    <h3>Nested if Statements</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    int age = 25;
+    bool hasLicense = true;
+    
+    if (age >= 18) {
+        if (hasLicense) {
+            std::cout << "You can drive!" << std::endl;
+        } else {
+            std::cout << "You need a license to drive." << std::endl;
+        }
+    } else {
+        std::cout << "You are too young to drive." << std::endl;
+    }
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top-btn" title="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>C++ Fundamentals</h3>
+                <p>Master the art of C++ programming with our comprehensive guide designed for beginners.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="syntax.html">Syntax</a></li>
+                    <li><a href="control.html">Control Structures</a></li>
+                    <li><a href="functions.html">Functions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#" target="_blank">C++ Documentation</a></li>
+                    <li><a href="#" target="_blank">Online Compiler</a></li>
+                    <li><a href="#" target="_blank">Practice Problems</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 C++ Fundamentals Workshop. Built for first year IT/COMSCIE students.</p>
+        </div>
+    </div> 
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

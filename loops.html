@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Loops - Loop Structures</title>
+    <link rel="icon" type="image/webp" href="idg.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>C++ Fundamentals</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="syntax.html" class="nav-link">Syntax</a>
+                </li>
+                <li class="nav-item">
+                    <a href="io.html" class="nav-link">I/O</a>
+                </li>
+                <li class="nav-item">
+                    <a href="control.html" class="nav-link">Control</a>
+                </li>
+                <li class="nav-item">
+                    <a href="loops.html" class="nav-link active">Loops</a>
+                </li>
+                <li class="nav-item">
+                    <a href="functions.html" class="nav-link">Functions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="arrays.html" class="nav-link">Arrays</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loops Section -->
+    <section id="loops" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Loop Structures</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="loops-demo">
+                <div class="loop-card">
+                    <h3>for Loop</h3>
+                    <div class="loop-visualization">
+                        <div class="loop-controls">
+                            <button class="loop-btn" onclick="startForLoop()">Start Loop</button>
+                            <button class="loop-btn" onclick="resetForLoop()">Reset</button>
+                        </div>
+                        <div class="loop-display">
+                            <div class="loop-counter" id="for-counter">0</div>
+                            <div class="loop-output" id="for-output"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loop-card">
+                    <h3>while Loop</h3>
+                    <div class="loop-visualization">
+                        <div class="loop-controls">
+                            <button class="loop-btn" onclick="startWhileLoop()">Start Loop</button>
+                            <button class="loop-btn" onclick="resetWhileLoop()">Reset</button>
+                        </div>
+                        <div class="loop-display">
+                            <div class="loop-counter" id="while-counter">0</div>
+                            <div class="loop-output" id="while-output"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loops-examples">
+                <div class="loop-example-card">
+                    <h3>for Loop</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    // Basic for loop
+    for (int i = 0; i < 5; i++) {
+        std::cout << "Iteration " << i << std::endl;
+    }
+    
+    // For loop with different step
+    for (int i = 10; i >= 0; i -= 2) {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="loop-example-card">
+                    <h3>while Loop</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    int count = 0;
+    
+    // Basic while loop
+    while (count < 5) {
+        std::cout << "Count: " << count << std::endl;
+        count++;
+    }
+    
+    // While loop with condition
+    int number = 1;
+    while (number <= 10) {
+        if (number % 2 == 0) {
+            std::cout << number << " is even" << std::endl;
+        }
+        number++;
+    }
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="loop-example-card">
+                    <h3>do-while Loop</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    int choice;
+    
+    do {
+        std::cout << "Enter 1-5 (0 to exit): ";
+        std::cin >> choice;
+        
+        if (choice >= 1 && choice <= 5) {
+            std::cout << "You selected: " << choice << std::endl;
+        }
+    } while (choice != 0);
+    
+    std::cout << "Goodbye!" << std::endl;
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="loop-example-card">
+                    <h3>Nested Loops</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    // Nested for loops for multiplication table
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= 5; j++) {
+            std::cout << i * j << "\t";
+        }
+        std::cout << std::endl;
+    }
+    
+    // Pattern printing
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= i; j++) {
+            std::cout << "* ";
+        }
+        std::cout << std::endl;
+    }
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="loop-example-card">
+                    <h3>Loop Control Statements</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    // Using break
+    for (int i = 1; i <= 10; i++) {
+        if (i == 5) {
+            break;  // Exit loop when i equals 5
+        }
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+    
+    // Using continue
+    for (int i = 1; i <= 10; i++) {
+        if (i % 2 == 0) {
+            continue;  // Skip even numbers
+        }
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="loop-example-card">
+                    <h3>Range-based for Loop (C++11+)</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+
+int main() {
+    // Range-based for with array
+    int numbers[] = {1, 2, 3, 4, 5};
+    for (int num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+    
+    // Range-based for with vector
+    std::vector&lt;std::string&gt; names = {"Alice", "Bob", "Charlie"};
+    for (const std::string& name : names) {
+        std::cout << "Hello, " << name << "!" << std::endl;
+    }
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top-btn" title="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>C++ Fundamentals</h3>
+                    <p>Master the art of C++ programming with our comprehensive guide designed for beginners.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="syntax.html">Syntax</a></li>
+                        <li><a href="control.html">Control Structures</a></li>
+                        <li><a href="functions.html">Functions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#" target="_blank">C++ Documentation</a></li>
+                        <li><a href="#" target="_blank">Online Compiler</a></li>
+                        <li><a href="#" target="_blank">Practice Problems</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 C++ Fundamentals Workshop. Built for first year IT/COMSCIE students.</p>
+            </div>
+        </div> 
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

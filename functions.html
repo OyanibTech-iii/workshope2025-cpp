@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Functions - Function Definitions and Usage</title>
+    <link rel="icon" type="image/webp" href="idg.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>C++ Fundamentals</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="syntax.html" class="nav-link">Syntax</a>
+                </li>
+                <li class="nav-item">
+                    <a href="io.html" class="nav-link">I/O</a>
+                </li>
+                <li class="nav-item">
+                    <a href="control.html" class="nav-link">Control</a>
+                </li>
+                <li class="nav-item">
+                    <a href="loops.html" class="nav-link">Loops</a>
+                </li>
+                <li class="nav-item">
+                    <a href="functions.html" class="nav-link active">Functions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="arrays.html" class="nav-link">Arrays</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Functions Section -->
+    <section id="functions" class="content-section parallax-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Functions</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="functions-demo">
+                <div class="function-card">
+                    <h3>Function Definition</h3>
+                    <div class="code-example">
+                        <pre><code>int add(int a, int b) {
+    return a + b;
+}
+
+double calculateArea(double radius) {
+    const double PI = 3.14159;
+    return PI * radius * radius;
+}
+
+bool isPrime(int number) {
+    if (number <= 1) return false;
+    if (number <= 3) return true;
+    if (number % 2 == 0 || number % 3 == 0) return false;
+    
+    for (int i = 5; i * i <= number; i += 6) {
+        if (number % i == 0 || number % (i + 2) == 0) {
+            return false;
+        }
+    }
+    return true;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="function-card">
+                    <h3>Function Call Demo</h3>
+                    <div class="function-demo">
+                        <div class="demo-inputs">
+                            <div class="input-group">
+                                <label>Number 1:</label>
+                                <input type="number" id="func-a" value="5">
+                            </div>
+                            <div class="input-group">
+                                <label>Number 2:</label>
+                                <input type="number" id="func-b" value="3">
+                            </div>
+                            <div class="input-group">
+                                <label>Radius:</label>
+                                <input type="number" id="func-radius" value="5.0" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label>Check Prime:</label>
+                                <input type="number" id="func-prime" value="17">
+                            </div>
+                        </div>
+                        <button class="demo-btn" onclick="runFunctions()">Run Functions</button>
+                        <div id="function-results" class="function-results"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="functions-examples">
+                <div class="function-example-card">
+                    <h3>Function Declaration and Definition</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+// Function declaration (prototype)
+int multiply(int a, int b);
+void printMessage(std::string message);
+
+int main() {
+    int result = multiply(5, 3);
+    std::cout << "Result: " << result << std::endl;
+    
+    printMessage("Hello from function!");
+    return 0;
+}
+
+// Function definition
+int multiply(int a, int b) {
+    return a * b;
+}
+
+void printMessage(std::string message) {
+    std::cout << message << std::endl;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="function-example-card">
+                    <h3>Function Parameters</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+// Function with default parameters
+void greet(std::string name = "User", int times = 1) {
+    for (int i = 0; i < times; i++) {
+        std::cout << "Hello, " << name << "!" << std::endl;
+    }
+}
+
+// Function with reference parameters
+void swap(int& a, int& b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    greet();                    // Uses defaults
+    greet("Alice");            // Custom name, default times
+    greet("Bob", 3);           // Custom name and times
+    
+    int x = 5, y = 10;
+    std::cout << "Before: x=" << x << ", y=" << y << std::endl;
+    swap(x, y);
+    std::cout << "After: x=" << x << ", y=" << y << std::endl;
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="function-example-card">
+                    <h3>Function Overloading</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+// Overloaded functions with same name but different parameters
+int add(int a, int b) {
+    return a + b;
+}
+
+double add(double a, double b) {
+    return a + b;
+}
+
+std::string add(std::string a, std::string b) {
+    return a + " " + b;
+}
+
+int add(int a, int b, int c) {
+    return a + b + c;
+}
+
+int main() {
+    std::cout << "add(5, 3) = " << add(5, 3) << std::endl;
+    std::cout << "add(3.14, 2.86) = " << add(3.14, 2.86) << std::endl;
+    std::cout << "add(\"Hello\", \"World\") = " << add("Hello", "World") << std::endl;
+    std::cout << "add(1, 2, 3) = " << add(1, 2, 3) << std::endl;
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="function-example-card">
+                    <h3>Recursive Functions</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+// Recursive factorial function
+int factorial(int n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+// Recursive Fibonacci function
+int fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Recursive GCD function
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
+int main() {
+    std::cout << "Factorial of 5: " << factorial(5) << std::endl;
+    std::cout << "Fibonacci(8): " << fibonacci(8) << std::endl;
+    std::cout << "GCD of 48 and 18: " << gcd(48, 18) << std::endl;
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="function-example-card">
+                    <h3>Inline Functions</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+// Inline function for simple operations
+inline int square(int x) {
+    return x * x;
+}
+
+inline int cube(int x) {
+    return x * x * x;
+}
+
+inline bool isEven(int x) {
+    return (x % 2 == 0);
+}
+
+int main() {
+    int num = 5;
+    
+    std::cout << "Number: " << num << std::endl;
+    std::cout << "Square: " << square(num) << std::endl;
+    std::cout << "Cube: " << cube(num) << std::endl;
+    std::cout << "Is even: " << (isEven(num) ? "Yes" : "No") << std::endl;
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="function-example-card">
+                    <h3>Function Pointers</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+// Function declarations
+int add(int a, int b) { return a + b; }
+int subtract(int a, int b) { return a - b; }
+int multiply(int a, int b) { return a * b; }
+
+int main() {
+    // Function pointer declaration
+    int (*operation)(int, int);
+    
+    int x = 10, y = 5;
+    
+    // Point to different functions
+    operation = add;
+    std::cout << "Addition: " << operation(x, y) << std::endl;
+    
+    operation = subtract;
+    std::cout << "Subtraction: " << operation(x, y) << std::endl;
+    
+    operation = multiply;
+    std::cout << "Multiplication: " << operation(x, y) << std::endl;
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top-btn" title="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+ <!-- Footer -->
+ <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>C++ Fundamentals</h3>
+                <p>Master the art of C++ programming with our comprehensive guide designed for beginners.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="syntax.html">Syntax</a></li>
+                    <li><a href="control.html">Control Structures</a></li>
+                    <li><a href="functions.html">Functions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#" target="_blank">C++ Documentation</a></li>
+                    <li><a href="#" target="_blank">Online Compiler</a></li>
+                    <li><a href="#" target="_blank">Practice Problems</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 C++ Fundamentals Workshop. Built for first year IT/COMSCIE students.</p>
+        </div>
+    </div> 
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

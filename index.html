@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Fundamentals - Complete Programming Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="idg.png">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>C++ Fundamentals</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="syntax.html" class="nav-link">Syntax</a>
+                </li>
+                <li class="nav-item">
+                    <a href="io.html" class="nav-link">I/O</a>
+                </li>
+                <li class="nav-item">
+                    <a href="control.html" class="nav-link">Control</a>
+                </li>
+                <li class="nav-item">
+                    <a href="loops.html" class="nav-link">Loops</a>
+                </li>
+                <li class="nav-item">
+                    <a href="functions.html" class="nav-link">Functions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="arrays.html" class="nav-link">Arrays</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero parallax-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="glitch" data-text="C++">C++</span>
+                    <span class="hero-subtitle">Programming Fundamentals</span>
+                </h1>
+                <p class="hero-description">Master the art of C++ programming with our comprehensive guide designed for beginners</p>
+                <div class="hero-buttons">
+                    <a href="syntax.html" class="btn btn-primary">Start Learning</a>
+                    <a href="syntax.html" class="btn btn-secondary">View Examples</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                    </div>
+                    <pre class="code-content"><code>#include &lt;iostream&gt;
+
+int main() {
+    std::cout << "Hello, C++ World!" << std::endl;
+    return 0;
+}</code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="floating-elements">
+            <div class="floating-element" data-speed="0.5">++</div>
+            <div class="floating-element" data-speed="0.3">&lt;/&gt;</div>
+            <div class="floating-element" data-speed="0.7">{}</div>
+            <div class="floating-element" data-speed="0.4">;</div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="intro" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Introduction</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>Explanation/Applications Programming</h3>
+                    <p>C++ is a general-purpose programming language developed by Bjarne Stroustrup as an extension of the C programming language. It combines the efficiency and flexibility of C with object-oriented programming features.</p>
+                    
+                    <h4>Key Applications:</h4>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-desktop"></i> System/OS development</li>
+                        <li><i class="fas fa-gamepad"></i> Game development</li>
+                        <li><i class="fas fa-microchip"></i> Embedded systems</li>
+                        <li><i class="fas fa-rocket"></i> High-performance applications</li>
+                        <li><i class="fas fa-laptop"></i> Desktop applications</li>
+                        <li><i class="fas fa-globe"></i> Web browsers</li>
+                        <li><i class="fas fa-database"></i> Database systems</li>
+                    </ul>
+                </div>
+                <div class="content-visual">
+                    <div class="tech-grid">
+                        <div class="tech-item" data-tech="system">
+                            <i class="fas fa-cogs"></i>
+                            <span>System</span>
+                        </div>
+                        <div class="tech-item" data-tech="game">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Games</span>
+                        </div>
+                        <div class="tech-item" data-tech="embedded">
+                            <i class="fas fa-microchip"></i>
+                            <span>Embedded</span>
+                        </div>
+                        <div class="tech-item" data-tech="performance">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Navigation Section -->
+    <section class="quick-nav-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quick Navigation</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="quick-nav-grid">
+                <a href="syntax.html" class="quick-nav-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Basic Syntax</h3>
+                    <p>Learn C++ fundamentals, variables, operators, and basic structure</p>
+                </a>
+                <a href="io.html" class="quick-nav-card">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3>Input/Output</h3>
+                    <p>Master std::cin, std::cout and user interaction</p>
+                </a>
+                <a href="control.html" class="quick-nav-card">
+                    <i class="fas fa-sitemap"></i>
+                    <h3>Control Structures</h3>
+                    <p>Understand if-else, switch statements and decision making</p>
+                </a>
+                <a href="loops.html" class="quick-nav-card">
+                    <i class="fas fa-redo"></i>
+                    <h3>Loops</h3>
+                    <p>Learn for, while, and do-while loops for repetition</p>
+                </a>
+                <a href="functions.html" class="quick-nav-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Functions</h3>
+                    <p>Create reusable code with functions and parameters</p>
+                </a>
+                <a href="arrays.html" class="quick-nav-card">
+                    <i class="fas fa-th"></i>
+                    <h3>Arrays & Pointers</h3>
+                    <p>Work with data structures and memory management</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>C++ Fundamentals</h3>
+                <p>Master the art of C++ programming with our comprehensive guide designed for beginners.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="syntax.html">Syntax</a></li>
+                    <li><a href="control.html">Control Structures</a></li>
+                    <li><a href="functions.html">Functions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#" target="_blank">C++ Documentation</a></li>
+                    <li><a href="#" target="_blank">Online Compiler</a></li>
+                    <li><a href="#" target="_blank">Practice Problems</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 C++ Fundamentals Workshop. Built for first year IT/COMSCIE students.</p>
+        </div>
+    </div> 
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

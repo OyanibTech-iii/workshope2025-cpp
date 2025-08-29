@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ I/O - Input/Output Operations</title>
+    <link rel="icon" type="image/webp" href="idg.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>C++ Fundamentals</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="syntax.html" class="nav-link">Syntax</a>
+                </li>
+                <li class="nav-item">
+                    <a href="io.html" class="nav-link active">I/O</a>
+                </li>
+                <li class="nav-item">
+                    <a href="control.html" class="nav-link">Control</a>
+                </li>
+                <li class="nav-item">
+                    <a href="loops.html" class="nav-link">Loops</a>
+                </li>
+                <li class="nav-item">
+                    <a href="functions.html" class="nav-link">Functions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="arrays.html" class="nav-link">Arrays</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Input/Output Section -->
+    <section id="io" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Input/Output Operations</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="io-demo">
+                <div class="io-card">
+                    <h3>std::cin - Input</h3>
+                    <div class="demo-window">
+                        <div class="demo-header">
+                            <span>Input Demo</span>
+                        </div>
+                        <div class="demo-content">
+                            <div class="input-group">
+                                <label>Enter your name:</label>
+                                <input type="text" id="demo-name" placeholder="Type here...">
+                            </div>
+                            <div class="input-group">
+                                <label>Enter your age:</label>
+                                <input type="number" id="demo-age" placeholder="Enter age">
+                            </div>
+                            <button class="demo-btn" onclick="processInput()">Process Input</button>
+                            <div id="demo-output" class="demo-output"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="io-card">
+                    <h3>std::cout - Output</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    int x = 10;
+    double y = 3.14;
+    
+    std::cout << "Value of x: " << x << std::endl;
+    std::cout << "Value of y: " << y << std::endl;
+    std::cout << "Sum: " << x + y << std::endl;
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="io-examples">
+                <div class="io-example-card">
+                    <h3>Basic Input/Output</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    std::string name;
+    int age;
+    
+    std::cout << "Enter your name: ";
+    std::cin >> name;
+    
+    std::cout << "Enter your age: ";
+    std::cin >> age;
+    
+    std::cout << "Hello " << name << "! You are " << age << " years old." << std::endl;
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="io-example-card">
+                    <h3>Formatted Output</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+
+int main() {
+    double pi = 3.14159265359;
+    int number = 42;
+    
+    // Set precision for floating point
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "Pi to 2 decimal places: " << pi << std::endl;
+    
+    // Set field width and alignment
+    std::cout << std::setw(10) << std::left << "Number: " << number << std::endl;
+    
+    // Hexadecimal output
+    std::cout << "Number in hex: 0x" << std::hex << number << std::endl;
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="io-example-card">
+                    <h3>File Input/Output</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+
+int main() {
+    // Writing to file
+    std::ofstream outFile("output.txt");
+    if (outFile.is_open()) {
+        outFile << "Hello from C++!" << std::endl;
+        outFile << "This is a test file." << std::endl;
+        outFile.close();
+        std::cout << "File written successfully!" << std::endl;
+    }
+    
+    // Reading from file
+    std::ifstream inFile("output.txt");
+    std::string line;
+    if (inFile.is_open()) {
+        std::cout << "File contents:" << std::endl;
+        while (std::getline(inFile, line)) {
+            std::cout << line << std::endl;
+        }
+        inFile.close();
+    }
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="io-example-card">
+                    <h3>String Streams</h3>
+                    <div class="code-example">
+                        <pre><code>#include &lt;iostream&gt;
+#include &lt;sstream&gt;
+#include &lt;string&gt;
+
+int main() {
+    std::string data = "John Doe 25 85.5";
+    std::istringstream iss(data);
+    
+    std::string name, surname;
+    int age;
+    double score;
+    
+    iss >> name >> surname >> age >> score;
+    
+    std::cout << "Name: " << name << " " << surname << std::endl;
+    std::cout << "Age: " << age << std::endl;
+    std::cout << "Score: " << score << std::endl;
+    
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top-btn" title="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>C++ Fundamentals</h3>
+                    <p>Master the art of C++ programming with our comprehensive guide designed for beginners.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="syntax.html">Syntax</a></li>
+                        <li><a href="control.html">Control Structures</a></li>
+                        <li><a href="functions.html">Functions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#" target="_blank">C++ Documentation</a></li>
+                        <li><a href="#" target="_blank">Online Compiler</a></li>
+                        <li><a href="#" target="_blank">Practice Problems</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 C++ Fundamentals Workshop. Built for first year IT/COMSCIE students.</p>
+            </div>
+        </div> 
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
